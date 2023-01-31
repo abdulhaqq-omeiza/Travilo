@@ -1,0 +1,393 @@
+/*
+1.  0 - 600px:       PHONE
+2.  600 - 900px:     TABLET-POTRAIT
+3.  900 - 1200PX:    TABLET-LANDSCAPE
+[1200 - 1800PX] is where our normal styles apply such as our DESKTOP which is basically the "Desktop First Approach"
+4.  1800PX +:        BIG-DESKTOPS
+
+ORDER: Base + typography > general layout + grid > page layout  > components
+*/
+/*@mixin  respond-phone {
+    @media (max-width: 600px) { @content};
+}
+*/
+/*
+$brak point argument choice;
+- phone
+- tab-portrait
+- tab-landscape
+- big-desktop
+
+1em = 16px which is the default font size
+*/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #efefef; }
+
+.content {
+  height: 75vh;
+  margin: .3rem auto;
+  padding: 0;
+  max-width: 55rem;
+  border-radius: 1.5rem;
+  overflow: hidden; }
+  @media only screen and (max-width: 450px) {
+    .content {
+      height: 100vh;
+      float: none;
+      max-width: 80rem;
+      margin: 2% auto; } }
+
+.btn--blue {
+  padding: .8rem 1rem;
+  font-size: .7rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 7% 12.5%;
+  background-color: #3c3cecc9;
+  border: none;
+  width: 63%; }
+  @media only screen and (max-width: 570px) {
+    .btn--blue {
+      font-size: .65rem;
+      width: 75%;
+      margin: 7% 12.5%; } }
+  @media only screen and (max-width: 564px) {
+    .btn--blue {
+      font-size: .63rem;
+      width: 69%;
+      margin: 7% 12.5%; } }
+  @media only screen and (max-width: 550px) {
+    .btn--blue {
+      font-size: .6rem;
+      width: 67%;
+      margin: 7% 12.5%; } }
+  @media only screen and (max-width: 450px) {
+    .btn--blue {
+      font-size: .6rem;
+      width: 90%;
+      margin: 7% 5%; } }
+
+.navo {
+  display: none; }
+  @media only screen and (max-width: 450px) {
+    .navo {
+      display: block; }
+      .navo__checkbox {
+        display: none; }
+      .navo__button {
+        background-color: #fff;
+        height: 1.5rem;
+        width: 1.5rem;
+        position: fixed;
+        top: 1rem;
+        right: .9rem;
+        border-radius: 50%;
+        z-index: 2000;
+        text-align: center; }
+      .navo__background {
+        height: 1.3rem;
+        width: 1.3rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background-image: radial-gradient(#55c57a, #55c57a); }
+      .navo__icon {
+        margin-top: .62rem;
+        position: relative; }
+        .navo__icon, .navo__icon::before, .navo__icon::after {
+          width: .9rem;
+          height: .1rem;
+          background-color: #000;
+          display: inline-block; }
+        .navo__icon::after, .navo__icon::before {
+          content: "";
+          position: absolute;
+          left: 0; }
+        .navo__icon::before {
+          top: -.213rem; }
+        .navo__icon::after {
+          top: .28rem; } }
+
+.left {
+  height: 100%;
+  width: 65%;
+  display: inline-block;
+  background-image: url(../../img/background.jpg);
+  background-size: cover;
+  background-position-x: 45%; }
+  @media only screen and (max-width: 450px) {
+    .left {
+      width: 59%; } }
+  @media only screen and (max-width: 570px) {
+    .left {
+      width: 59%; } }
+  @media only screen and (max-width: 550px) {
+    .left {
+      width: 61%; } }
+  @media only screen and (max-width: 564px) {
+    .left {
+      width: 58%; } }
+  @media only screen and (max-width: 450px) {
+    .left {
+      height: 35%;
+      display: block;
+      width: 95%; }
+      .left:not(:last-child) {
+        margin: 0 auto; } }
+  .left__name {
+    color: white;
+    display: inline-block;
+    margin: 1.5rem 3rem;
+    font-size: .7rem; }
+    @media only screen and (max-width: 652px) {
+      .left__name {
+        display: block;
+        margin: 4% 0 0 7.7%; } }
+    @media only screen and (max-width: 652px) {
+      .left__name {
+        margin: 3% 0 0 9%; } }
+    @media only screen and (max-width: 500px) {
+      .left__name {
+        margin: 3% 0 0 9%; } }
+    @media only screen and (max-width: 450px) {
+      .left__name {
+        margin: 1% 0 0 7.8%;
+        font-size: .6rem;
+        padding: .5rem 0; } }
+  .left__navigation {
+    float: right; }
+    @media only screen and (max-width: 652px) {
+      .left__navigation {
+        float: none;
+        margin: 0 5.3%; } }
+  .left__list {
+    display: inline-block;
+    margin: 1.3rem .9rem; }
+    @media only screen and (max-width: 652px) {
+      .left__list {
+        margin: 3% 3%; } }
+    @media only screen and (max-width: 450px) {
+      .left__list {
+        display: none; } }
+  .left__tag {
+    text-decoration: none;
+    color: #fff;
+    font-size: .7rem; }
+    @media only screen and (max-width: 450px) {
+      .left__tag {
+        font-size: .6rem; } }
+  .left__unordered-list {
+    list-style: none; }
+  .left__paragraph {
+    margin: 24% 8% 2% 8%;
+    font-size: 2.4rem;
+    font-weight: 700;
+    width: 50%;
+    color: #fff; }
+    @media only screen and (max-width: 500px) {
+      .left__paragraph {
+        font-size: 2rem; } }
+    @media only screen and (max-width: 1250px) {
+      .left__paragraph {
+        margin: 17% 8% 2% 8%; } }
+    @media only screen and (max-width: 854px) {
+      .left__paragraph {
+        margin: 17% 8% 2% 8%;
+        font-size: 2rem; } }
+    @media only screen and (max-width: 652px) {
+      .left__paragraph {
+        margin: 18% 8% 2% 8%;
+        font-size: 1.5rem; } }
+    @media only screen and (max-width: 450px) {
+      .left__paragraph {
+        margin: 18% 8% 0 8%;
+        font-size: 1rem; } }
+  .left__author {
+    margin: 0 8%;
+    color: #fff; }
+    @media only screen and (max-width: 450px) {
+      .left__author {
+        margin: 1% 0 0 8%;
+        font-size: .5rem; } }
+
+.right {
+  height: 100%;
+  width: 35%;
+  background-color: #fff;
+  float: right; }
+  @media only screen and (max-width: 570px) {
+    .right {
+      width: 41%; } }
+  @media only screen and (max-width: 550px) {
+    .right {
+      width: 39%; } }
+  @media only screen and (max-width: 564px) {
+    .right {
+      width: 42%; } }
+  @media only screen and (max-width: 450px) {
+    .right {
+      height: 80%;
+      float: none;
+      width: 95%;
+      margin: 0 auto; } }
+  .right__instruction {
+    margin: 8% 0 13% 60%;
+    font-size: .8rem; }
+    @media only screen and (max-width: 564px) {
+      .right__instruction {
+        font-size: .7rem; } }
+    @media only screen and (max-width: 550px) {
+      .right__instruction {
+        font-size: .6rem; } }
+    @media only screen and (max-width: 450px) {
+      .right__instruction {
+        font-size: .54rem;
+        margin: 4% 0 7% 45%;
+        padding: 1rem 0; } }
+  .right__notspecial {
+    margin: 5%  3% 3% 12%; }
+    @media only screen and (max-width: 450px) {
+      .right__notspecial {
+        margin: 5%  1% 1% 5%; } }
+  .right__form-label {
+    color: #d6d1d1dc;
+    display: block;
+    margin: 0 4% 4% 0;
+    font-size: .8rem; }
+    @media only screen and (max-width: 570px) {
+      .right__form-label {
+        font-size: .75rem; } }
+    @media only screen and (max-width: 564px) {
+      .right__form-label {
+        font-size: .7rem; } }
+    @media only screen and (max-width: 550px) {
+      .right__form-label {
+        font-size: .6rem; } }
+  .right__form-input {
+    padding: .4rem .8rem;
+    background-color: #fcf8f8;
+    border: none;
+    font-size: .8rem;
+    width: 75%; }
+    @media only screen and (max-width: 570px) {
+      .right__form-input {
+        font-size: .71rem;
+        width: 87%; } }
+    @media only screen and (max-width: 564px) {
+      .right__form-input {
+        font-size: .7rem;
+        width: 83%; } }
+    @media only screen and (max-width: 550px) {
+      .right__form-input {
+        font-size: .6rem;
+        width: 80%; } }
+    @media only screen and (max-width: 450px) {
+      .right__form-input {
+        font-size: .6rem;
+        width: 95%; } }
+  .right__slabel {
+    margin: 5% 0 3% 13%; }
+    @media only screen and (max-width: 450px) {
+      .right__slabel {
+        margin: 5% 0 3% 6%; } }
+  .right__s-label1 {
+    color: #d6d1d1dc;
+    font-size: .8rem; }
+    @media only screen and (max-width: 570px) {
+      .right__s-label1 {
+        font-size: .75rem; } }
+    @media only screen and (max-width: 564px) {
+      .right__s-label1 {
+        font-size: .7rem; } }
+    @media only screen and (max-width: 550px) {
+      .right__s-label1 {
+        font-size: .6rem; } }
+  .right__s-label2 {
+    color: #d6d1d1dc;
+    font-size: .8rem;
+    margin: 0 25%; }
+    @media only screen and (max-width: 570px) {
+      .right__s-label2 {
+        font-size: .75rem; } }
+    @media only screen and (max-width: 564px) {
+      .right__s-label2 {
+        font-size: .7rem; } }
+    @media only screen and (max-width: 550px) {
+      .right__s-label2 {
+        font-size: .6rem; } }
+    @media only screen and (max-width: 450px) {
+      .right__s-label2 {
+        margin: 0 35%; } }
+  .right__sinput {
+    width: 100%; }
+  .right__s1 {
+    display: inline-block;
+    width: 50%; }
+  .right__s2 {
+    float: right;
+    width: 50%; }
+  .right__s-input1 {
+    display: inline-block;
+    width: 62%;
+    padding: .4rem .8rem;
+    font-size: .8rem;
+    margin: 0 25%;
+    border: none;
+    background-color: #fcf8f8;
+    border-right: 2px solid  #fcf8f8; }
+    @media only screen and (max-width: 570px) {
+      .right__s-input1 {
+        font-size: .75rem;
+        width: 72%;
+        margin: 0 24%; } }
+    @media only screen and (max-width: 564px) {
+      .right__s-input1 {
+        font-size: .7rem;
+        width: 67%;
+        margin: 0 25%; } }
+    @media only screen and (max-width: 550px) {
+      .right__s-input1 {
+        font-size: .6rem;
+        width: 63%;
+        margin: 0 23%; } }
+    @media only screen and (max-width: 450px) {
+      .right__s-input1 {
+        font-size: .6rem;
+        width: 85%;
+        margin: 0 10%; } }
+  .right__s-input2 {
+    width: 63%;
+    float: right;
+    font-size: .8rem;
+    padding: .4rem .8rem;
+    margin: 0 48%;
+    border: none;
+    background-color: #fcf8f8; }
+    @media only screen and (max-width: 570px) {
+      .right__s-input2 {
+        font-size: .75rem;
+        width: 77%;
+        margin: 0 26%; } }
+    @media only screen and (max-width: 564px) {
+      .right__s-input2 {
+        font-size: .7rem;
+        width: 69%;
+        margin: 0 36%; } }
+    @media only screen and (max-width: 550px) {
+      .right__s-input2 {
+        font-size: .6rem;
+        width: 70%;
+        margin: 0 43%; } }
+    @media only screen and (max-width: 450px) {
+      .right__s-input2 {
+        font-size: .6rem;
+        width: 90%;
+        margin: 0 12%; } }

@@ -1,0 +1,38 @@
+.btn {
+
+    &--blue {
+        padding: .8rem 1rem;
+        font-size: .7rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin: 7% 12.5%;
+        background-color: #3c3cecc9;
+        border: none;
+        width: 63%;
+
+        @media only screen and (max-width: 570px) {
+            font-size: .65rem;
+            width: 75%;
+            margin: 7% 12.5%;
+       
+         };
+
+        @media only screen and (max-width: 564px) {
+            font-size: .63rem;
+            width: 69%;
+            margin: 7% 12.5%;
+       
+         };
+
+        @media only screen and (max-width: 550px) {
+            font-size: .6rem;
+            width: 67%;
+            margin: 7% 12.5%;
+              };
+         @media only screen and (max-width: 450px) {
+            font-size: .6rem;
+            width: 90%;
+            margin: 7% 5%;
+                      };
+    }
+}

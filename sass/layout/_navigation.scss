@@ -1,0 +1,56 @@
+.navo {
+    display: none;
+    @media only screen and (max-width: 450px) {
+        display: block;
+        &__checkbox {
+            display: none;
+        }
+
+        &__button {
+            background-color: $color-primary-white;
+            height: 1.5rem;
+            width: 1.5rem;
+            position: fixed;
+            top: 1rem;
+            right: .9rem ;
+            border-radius: 50% ;
+            z-index: 2000;
+            text-align: center;
+
+        }
+
+        &__background {
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-image: radial-gradient($color-primary-green, $color-primary-green);
+        }
+
+        &__icon {
+            margin-top: .62rem;
+            position: relative;
+            &,
+            &::before,
+            &::after {
+                width: .9rem;
+                height: .1rem;
+                background-color: $color-black-dark;
+                display: inline-block;
+                
+            }
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+            }
+
+            &::before {top: -.213rem}
+            &::after {top: .28rem}
+        }
+              };
+}
