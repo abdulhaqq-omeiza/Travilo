@@ -120,7 +120,7 @@ body {
   height: 100%;
   width: 65%;
   display: inline-block;
-  background-image: url(../../img/background.jpg);
+  background-image: url(../img/background.jpg);
   background-size: cover;
   background-position-x: 45%; }
   @media only screen and (max-width: 450px) {
